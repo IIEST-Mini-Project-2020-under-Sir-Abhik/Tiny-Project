@@ -1,5 +1,14 @@
-import numpy as np
-from PIL import Image
+try:    #if numpy is not found
+    import numpy as np
+except Exception as e:
+    print(e)
+    print("Install numpy with 'pip3 install numpy' command (or pip)"); exit()
+
+try:    #if PIL is not found
+    from PIL import Image
+except Exception as e:
+    print(e)
+    print("Install PIL with 'pip3 install pillow' command (or pip)"); exit()
 
 size = (50, 50)
 images = np.load('processed_data.npy',allow_pickle=True)    #loading processed data
